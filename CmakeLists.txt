@@ -4,8 +4,14 @@ project(chip8_emulator_themyle C)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(
-  chip8
+# add src files
+add_executable(chip8
   src/main.c
+)
+
+# add include dir
+target_include_directories(chip8 PRIVATE
+  ${CMAKE_SOURCE_DIR}/include/
 )
